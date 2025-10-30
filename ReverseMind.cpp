@@ -13,7 +13,7 @@ int main() {
 
     int low = 1, high = 100, guess, response;
 
-    do {
+    while (low <= high) {
         guess = low + (high - low) / 2;
         cout << "\nIs your number " << guess << "? ";
         cin >> response;
@@ -22,11 +22,13 @@ int main() {
             low = guess + 1;
         else if (response == 2)
             high = guess - 1;
-        else if (response != 3)
+        else if (response == 3) {
+            cout << "Great! I guessed your number: " << guess << "\n";
+            return 0;
+        } else
             cout << "⚠️ Invalid input! Please enter 1, 2, or 3.\n";
+    }
 
-    } while (response != 3);
-
-    cout << "Great! I guessed your number: " << guess << "\n";
+    cout << "🤔 Your answers were inconsistent! Try again.\n";
     return 0;
 }
