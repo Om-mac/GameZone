@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Zone – DSA Fun Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎮 Game Zone – DSA Fun Hub</h1>
+    <p>Select a game to explore different Data Structures in action!</p>
+  </header>
+
+  <main class="game-grid">
+    <div class="game-card" onclick="playGame('LostExplorer')">
+      <h2>🏝️ Lost Explorer</h2>
+      <p>2D Array + Queue</p>
+    </div>
+
+    <div class="game-card" onclick="playGame('ReverseMind')">
+      <h2>🧠 Reverse Mind</h2>
+      <p>Stack</p>
+    </div>
+
+    <div class="game-card" onclick="playGame('QueueRush')">
+      <h2>⏳ Queue Rush</h2>
+      <p>Queue</p>
+    </div>
+
+    <div class="game-card" onclick="playGame('TreasureLogic')">
+      <h2>💎 Treasure Logic</h2>
+      <p>Binary Tree</p>
+    </div>
+  </main>
+
+  <section class="output">
+    <h3>🖥️ Game Output</h3>
+    <pre id="outputArea">Click a game to start...</pre>
+  </section>
+
+  <footer>
+    <p>| FDSA Course Project |</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
