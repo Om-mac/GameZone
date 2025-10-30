@@ -33,7 +33,6 @@ def run_game():
         # Compile the C++ file (if not compiled)
         subprocess.run(["g++", file, "-o", exe_name], check=True)
 
-        # Run the compiled file and capture output
         result = subprocess.run([f"./{exe_name}"], input="", text=True, capture_output=True)
         output = result.stdout + result.stderr
     except subprocess.CalledProcessError as e:
