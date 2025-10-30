@@ -2,32 +2,29 @@
 using namespace std;
 
 int main() {
-    cout << "Reverse Mind Program" << endl;
-    cout << "Think of a number between 1 and 100" << endl;
-    cout << "Answer with: " << endl;
-    cout << "1 - My number is higher" << endl;
-    cout << "2 - My number is lower" << endl;
-    cout << "3 - That's correct!" << endl;
-    
-    int low = 1;
-    int high = 100;
-    int guess;
-    int response;
-    
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    cout << "Reverse Mind Program\n";
+    cout << "Think of a number between 1 and 100\n";
+    cout << "1 - My number is higher\n";
+    cout << "2 - My number is lower\n";
+    cout << "3 - That's correct!\n";
+
+    int low = 1, high = 100, guess, response;
+
     do {
         guess = (low + high) / 2;
         cout << "\nIs your number " << guess << "? ";
         cin >> response;
-        
-        if (response == 1) {  // Number is higher
+
+        if (response == 1)
             low = guess + 1;
-        } else if (response == 2) {  // Number is lower
+        else if (response == 2)
             high = guess - 1;
-        }
-        
+
     } while (response != 3);
-    
-    cout << "Great! I guessed your number: " << guess << endl;
-    
+
+    cout << "Great! I guessed your number: " << guess << "\n";
     return 0;
 }
