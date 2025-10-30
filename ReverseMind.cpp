@@ -14,7 +14,7 @@ int main() {
     int low = 1, high = 100, guess, response;
 
     do {
-        guess = low + (high - low) / 2; // safer mid calculation
+        guess = low + (high - low) / 2;
         cout << "\nIs your number " << guess << "? ";
         cin >> response;
 
@@ -22,6 +22,8 @@ int main() {
             low = guess + 1;
         else if (response == 2)
             high = guess - 1;
+        else if (response != 3)
+            cout << "⚠️ Invalid input! Please enter 1, 2, or 3.\n";
 
     } while (response != 3);
 
