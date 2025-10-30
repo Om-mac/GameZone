@@ -14,7 +14,7 @@ int main() {
     int low = 1, high = 100, guess, response;
 
     do {
-        guess = (low + high) / 2;
+        guess = low + (high - low) / 2; // safer mid calculation
         cout << "\nIs your number " << guess << "? ";
         cin >> response;
 
