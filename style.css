@@ -1,70 +1,134 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
-  color: #f5f5f5;
+/* ==== RESET & GLOBAL ==== */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
+body {
+  background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ==== HEADER ==== */
 header {
   text-align: center;
-  padding: 2rem;
-  background: #0f3460;
-  color: #fff;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2.2rem;
-}
-
-header p {
-  margin-top: 8px;
-  font-size: 1rem;
-}
-
-.game-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
-}
-
-.game-card {
-  background: #1b1b3a;
-  border-radius: 16px;
-  padding: 1.5rem;
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.3s ease;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #0f2027;
+  border-bottom: 4px solid #00f2fe;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+header h1 {
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+header p {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  opacity: 0.9;
+}
+
+/* ==== MAIN GRID ==== */
+main.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ==== GAME CARDS ==== */
+.game-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid transparent;
+  border-radius: 15px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(5px);
+}
+
+.game-card h2 {
+  font-size: 1.4rem;
+  color: #00f2fe;
+  margin-bottom: 0.5rem;
+}
+
+.game-card p {
+  font-size: 1rem;
+  color: #d9faff;
+}
+
+/* ==== HOVER EFFECT ==== */
 .game-card:hover {
   transform: scale(1.05);
-  background: #533483;
+  border: 2px solid #00f2fe;
+  box-shadow: 0 8px 20px rgba(0, 242, 254, 0.3);
 }
 
-.output {
-  background: #111827;
-  margin: 2rem;
+/* ==== OUTPUT SECTION ==== */
+section.output {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  margin: 2rem auto;
   border-radius: 10px;
-  padding: 1rem 1.5rem;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
-pre {
-  background: #1f2937;
-  color: #10b981;
+section.output h3 {
+  color: #00f2fe;
+  margin-bottom: 1rem;
+}
+
+#outputArea {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #00f2fe;
+  border-radius: 8px;
   padding: 1rem;
-  border-radius: 10px;
-  font-size: 0.95rem;
+  text-align: left;
+  color: #aefcff;
+  font-family: 'Courier New', monospace;
+  white-space: pre-wrap;
   overflow-x: auto;
 }
 
+/* ==== FOOTER ==== */
 footer {
   text-align: center;
   padding: 1rem;
-  background: #0f3460;
-  color: #ccc;
+  margin-top: auto;
+  background: #0f2027;
+  color: #aefcff;
   font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.7rem;
+  }
+
+  .game-card {
+    padding: 1.5rem;
+  }
+
+  section.output {
+    padding: 1.5rem;
+  }
 }
